@@ -1,0 +1,51 @@
+# Remove or comment out any lines you want to keep tracked
+
+# Go Binaries and Executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.prof
+
+# Output directory for CLI/Server builds
+/bin/
+/dist/
+out/
+
+# Go tools artifacts
+*.out
+*.log
+crash.log
+
+# Dependency directories 
+# (Uncomment if you do NOT want to commit your vendor folder. 
+# Generally, committing vendor is optional in Go modules, but usually ignored.)
+# vendor/
+
+# Development / IDE Configurations
+# JetBrains (GoLand, IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Mac OS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+desktop.ini
+
+# Environment files (sensitive data)
+.env
+.env.*
+!.env.example
