@@ -20,6 +20,7 @@ type AccountRepository interface {
 	CreateAccount(account *Account) error
 	Accumulate(accountId string, amount float64) error
 	GetByPersonId(personId string) (*Account, error)
+	GetAll() ([]*Account, error)
 }
 
 type InMemoryAccountRepository struct {
@@ -56,4 +57,12 @@ func (r *InMemoryAccountRepository) GetByPersonId(personId string) (*Account, er
 		}
 	}
 	return nil, fmt.Errorf("account not found")
+}
+
+func (r *InMemoryAccountRepository) GetAll() ([]*Account, error) {
+	accounts := make([]*Account, 0, len(r.accounts))
+	for _, account := range r.accounts {
+		accounts = append(accounts, account)
+	}
+	return accounts, nil
 }
