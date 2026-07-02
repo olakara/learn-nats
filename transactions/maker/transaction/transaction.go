@@ -1,9 +1,9 @@
 package transaction
 
 type Transaction struct {
-	Id       string
-	Amount   float64
-	PersonId string
+	Id       string  `json:"id"`
+	Amount   float64 `json:"amount"`
+	PersonId string  `json:"personId"`
 }
 
 func NewTransaction(id string, amount float64, personId string) Transaction {

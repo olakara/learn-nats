@@ -1,13 +1,16 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"maker/config"
 	"maker/people"
 	"maker/transaction"
 	"os"
 
 	"github.com/google/uuid"
+	"github.com/nats-io/nats.go"
 )
 
 func main() {
@@ -27,5 +30,16 @@ func main() {
 
 	t := transaction.NewTransaction(uuid.New().String(), 100.0, p.Id)
 	fmt.Printf("Created Transaction: ID=%s, Amount=%.2f, PersonID=%s\n", t.Id, t.Amount, t.PersonId)
+
+	nc, err := nats.Connect(nats.DefaultURL)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer nc.Close()
+
+	payload, _ := json.Marshal(t)
+	if err := nc.Publish("transactions.new", payload); err != nil {
+		log.Fatal(err)
+	}
 
 }
