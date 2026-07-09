@@ -5,14 +5,14 @@
             "name": "Razr Bluetooth Speaker",
             "sku": "RAZR-BT-SPK-01",
             "bom": [
-                { "code": "COMP-100", "name": "Speaker Driver 40mm", "quantity": 2, "unit": "ea" },
-                { "code": "COMP-101", "name": "Bluetooth Module (BT 5.0)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-105", "name": "Speaker Enclosure (Plastic)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-107", "name": "Control Buttons", "quantity": 3, "unit": "ea" }
+                { "id": "a1f3e5d7-2c4b-4a9e-8f1d-3b7c5e9d2f4a", "quantity": 2, "unit": "ea" },
+                { "id": "b2e4f6c8-3d5a-4b0f-9g2e-4c8d6f0e3g5b", "quantity": 1, "unit": "ea" },
+                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
+                { "id": "f6i8j0g2-7h9e-8f4j-3k6i-8g2h0j4i7k9f", "quantity": 1, "unit": "ea" },
+                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" },
+                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 3, "unit": "ea" }
             ]
         },
         {
@@ -20,14 +20,14 @@
             "name": "RGB Table Lamp",
             "sku": "RGB-LMP-TBL-01",
             "bom": [
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-107", "name": "Control Buttons", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-108", "name": "RGB LED Strip", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-109", "name": "Lamp Base (Metal)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-110", "name": "Frosted Diffuser Shade", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-111", "name": "IR Remote Control", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" }
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
+                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 1, "unit": "ea" },
+                { "id": "i9l1m3j5-0k2h-1i7m-6n9l-1j5k3m7l0n2i", "quantity": 1, "unit": "ea" },
+                { "id": "j0m2n4k6-1l3i-2j8n-7o0m-2k6l4n8m1o3j", "quantity": 1, "unit": "ea" },
+                { "id": "k1n3o5l7-2m4j-3k9o-8p1n-3l7m5o9n2p4k", "quantity": 1, "unit": "ea" },
+                { "id": "l2o4p6m8-3n5k-4l0p-9q2o-4m8n6p0o3q5l", "quantity": 1, "unit": "ea" },
+                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" }
             ]
         },
         {
@@ -35,12 +35,12 @@
             "name": "Wireless Charging Pad",
             "sku": "WL-CHRG-PAD-01",
             "bom": [
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-112", "name": "Wireless Charging Coil", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-113", "name": "Charging Pad Housing (Plastic)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-114", "name": "LED Charging Indicator", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-115", "name": "Non-Slip Rubber Base", "quantity": 1, "unit": "ea" }
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
+                { "id": "m3p5q7n9-4o6l-5m1q-0r3p-5n9o7q1p4r6m", "quantity": 1, "unit": "ea" },
+                { "id": "n4q6r8o0-5p7m-6n2r-1s4q-6o0p8r2q5s7n", "quantity": 1, "unit": "ea" },
+                { "id": "o5r7s9p1-6q8n-7o3s-2t5r-7p1q9s3r6t8o", "quantity": 1, "unit": "ea" },
+                { "id": "p6s8t0q2-7r9o-8p4t-3u6s-8q2r0t4s7u9p", "quantity": 1, "unit": "ea" }
             ]
         },
         {
@@ -48,12 +48,12 @@
             "name": "Portable Power Bank 10000mAh",
             "sku": "PWR-BANK-10K-01",
             "bom": [
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 2, "unit": "ea" },
-                { "code": "COMP-116", "name": "Power Bank Cell Pack (10000mAh)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-117", "name": "Power Bank Housing (Aluminum)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-118", "name": "DC-DC Boost Converter", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-114", "name": "LED Charging Indicator", "quantity": 4, "unit": "ea" }
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 2, "unit": "ea" },
+                { "id": "q7t9u1r3-8s0p-9q5u-4v7t-9r3s1u5t8v0q", "quantity": 1, "unit": "ea" },
+                { "id": "r8u0v2s4-9t1q-0r6v-5w8u-0s4t2v6u9w1r", "quantity": 1, "unit": "ea" },
+                { "id": "s9v1w3t5-0u2r-1s7w-6x9v-1t5u3w7v0x2s", "quantity": 1, "unit": "ea" },
+                { "id": "o5r7s9p1-6q8n-7o3s-2t5r-7p1q9s3r6t8o", "quantity": 4, "unit": "ea" }
             ]
         },
         {
@@ -61,15 +61,15 @@
             "name": "Mini Bluetooth Projector",
             "sku": "MINI-PROJ-BT-01",
             "bom": [
-                { "code": "COMP-101", "name": "Bluetooth Module (BT 5.0)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-119", "name": "Projector Lens Module", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-120", "name": "LED Light Engine", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-121", "name": "Cooling Fan Module", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-122", "name": "Projector Housing (Plastic)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-123", "name": "Focus Adjustment Wheel", "quantity": 1, "unit": "ea" }
+                { "id": "b2e4f6c8-3d5a-4b0f-9g2e-4c8d6f0e3g5b", "quantity": 1, "unit": "ea" },
+                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
+                { "id": "t0w2x4u6-1v3s-2t8x-7y0w-2u6v4x8w1y3t", "quantity": 1, "unit": "ea" },
+                { "id": "u1x3y5v7-2w4t-3u9y-8z1x-3v7w5y9x2z4u", "quantity": 1, "unit": "ea" },
+                { "id": "v2y4z6w8-3x5u-4v0z-9a2y-4w8x6z0y3a5v", "quantity": 1, "unit": "ea" },
+                { "id": "w3z5a7x9-4y6v-5w1a-0b3z-5x9y7a1z4b6w", "quantity": 1, "unit": "ea" },
+                { "id": "x4a6b8y0-5z7w-6x2b-1c4a-6y0z8b2a5c7x", "quantity": 1, "unit": "ea" }
             ]
         },
         {
@@ -77,14 +77,14 @@
             "name": "Smart Desk Fan",
             "sku": "SMRT-DSK-FAN-01",
             "bom": [
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-107", "name": "Control Buttons", "quantity": 3, "unit": "ea" },
-                { "code": "COMP-111", "name": "IR Remote Control", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-124", "name": "Desk Fan Motor", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-125", "name": "Fan Blade Assembly", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-126", "name": "Fan Housing (Plastic)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-127", "name": "Oscillation Motor", "quantity": 1, "unit": "ea" }
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
+                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 3, "unit": "ea" },
+                { "id": "l2o4p6m8-3n5k-4l0p-9q2o-4m8n6p0o3q5l", "quantity": 1, "unit": "ea" },
+                { "id": "y5b7c9z1-6a8x-7y3c-2d5b-7z1a9c3b6d8y", "quantity": 1, "unit": "ea" },
+                { "id": "z6c8d0a2-7b9y-8z4d-3e6c-8a2b0d4c7e9z", "quantity": 1, "unit": "ea" },
+                { "id": "a7d9e1b3-8c0z-9a5e-4f7d-9b3c1e5d8f0a", "quantity": 1, "unit": "ea" },
+                { "id": "b8e0f2c4-9d1a-0b6f-5g8e-0c4d2f6e9g1b", "quantity": 1, "unit": "ea" }
             ]
         },
         {
@@ -92,13 +92,13 @@
             "name": "Smart Video Doorbell",
             "sku": "SMRT-DOORBELL-01",
             "bom": [
-                { "code": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-128", "name": "Doorbell Camera Module", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-129", "name": "PIR Motion Sensor", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-130", "name": "Doorbell Housing (Weatherproof)", "quantity": 1, "unit": "ea" },
-                { "code": "COMP-131", "name": "Wi-Fi Module", "quantity": 1, "unit": "ea" }
+                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
+                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
+                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" },
+                { "id": "c9f1g3d5-0e2b-1c7g-6h9f-1d5e3g7f0h2c", "quantity": 1, "unit": "ea" },
+                { "id": "d0g2h4e6-1f3c-2d8h-7i0g-2e6f4h8g1i3d", "quantity": 1, "unit": "ea" },
+                { "id": "e1h3i5f7-2g4d-3e9i-8j1h-3f7g5i9h2j4e", "quantity": 1, "unit": "ea" },
+                { "id": "f2i4j6g8-3h5e-4f0j-9k2i-4g8h6j0i3k5f", "quantity": 1, "unit": "ea" }
             ]
         }
     ]
