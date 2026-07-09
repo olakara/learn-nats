@@ -1,3 +1,105 @@
 {
-    "products":[]
+    "products": [
+        {
+            "id": "PROD-1001",
+            "name": "Razr Bluetooth Speaker",
+            "sku": "RAZR-BT-SPK-01",
+            "bom": [
+                { "componentId": "COMP-100", "name": "Speaker Driver 40mm", "quantity": 2, "unit": "ea" },
+                { "componentId": "COMP-101", "name": "Bluetooth Module (BT 5.0)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-105", "name": "Speaker Enclosure (Plastic)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-107", "name": "Control Buttons", "quantity": 3, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1002",
+            "name": "RGB Table Lamp",
+            "sku": "RGB-LMP-TBL-01",
+            "bom": [
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-107", "name": "Control Buttons", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-108", "name": "RGB LED Strip", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-109", "name": "Lamp Base (Metal)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-110", "name": "Frosted Diffuser Shade", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-111", "name": "IR Remote Control", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1003",
+            "name": "Wireless Charging Pad",
+            "sku": "WL-CHRG-PAD-01",
+            "bom": [
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-112", "name": "Wireless Charging Coil", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-113", "name": "Charging Pad Housing (Plastic)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-114", "name": "LED Charging Indicator", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-115", "name": "Non-Slip Rubber Base", "quantity": 1, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1004",
+            "name": "Portable Power Bank 10000mAh",
+            "sku": "PWR-BANK-10K-01",
+            "bom": [
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 2, "unit": "ea" },
+                { "componentId": "COMP-116", "name": "Power Bank Cell Pack (10000mAh)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-117", "name": "Power Bank Housing (Aluminum)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-118", "name": "DC-DC Boost Converter", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-114", "name": "LED Charging Indicator", "quantity": 4, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1005",
+            "name": "Mini Bluetooth Projector",
+            "sku": "MINI-PROJ-BT-01",
+            "bom": [
+                { "componentId": "COMP-101", "name": "Bluetooth Module (BT 5.0)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-119", "name": "Projector Lens Module", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-120", "name": "LED Light Engine", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-121", "name": "Cooling Fan Module", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-122", "name": "Projector Housing (Plastic)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-123", "name": "Focus Adjustment Wheel", "quantity": 1, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1006",
+            "name": "Smart Desk Fan",
+            "sku": "SMRT-DSK-FAN-01",
+            "bom": [
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-104", "name": "USB-C Charging Port", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-107", "name": "Control Buttons", "quantity": 3, "unit": "ea" },
+                { "componentId": "COMP-111", "name": "IR Remote Control", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-124", "name": "Desk Fan Motor", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-125", "name": "Fan Blade Assembly", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-126", "name": "Fan Housing (Plastic)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-127", "name": "Oscillation Motor", "quantity": 1, "unit": "ea" }
+            ]
+        },
+        {
+            "id": "PROD-1007",
+            "name": "Smart Video Doorbell",
+            "sku": "SMRT-DOORBELL-01",
+            "bom": [
+                { "componentId": "COMP-102", "name": "Lithium-Ion Battery 2000mAh", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-103", "name": "PCB Main Board", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-106", "name": "Rubber Gasket Seal", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-128", "name": "Doorbell Camera Module", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-129", "name": "PIR Motion Sensor", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-130", "name": "Doorbell Housing (Weatherproof)", "quantity": 1, "unit": "ea" },
+                { "componentId": "COMP-131", "name": "Wi-Fi Module", "quantity": 1, "unit": "ea" }
+            ]
+        }
+    ]
 }
