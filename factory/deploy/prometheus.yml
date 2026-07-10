@@ -1,0 +1,30 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # App metrics, exported via the OTel Collector's Prometheus exporter.
+  - job_name: 'otel-collector-app-metrics'
+    static_configs:
+      - targets: ['otel-collector:8889']
+
+  # Collector's own internal health/metrics.
+  - job_name: 'otel-collector-internal'
+    static_configs:
+      - targets: ['otel-collector:8888']
+
+  # NATS JetStream server-side metrics (consumer lag, stream state,
+  # redelivery counts) - not visible from client-side traces alone.
+  - job_name: 'nats'
+    static_configs:
+      - targets: ['nats-exporter:7777']
+
+  # Redis server-side metrics (memory, evictions, keyspace hits/misses).
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+
+  # Postgres server-side metrics (connections, locks, replication).
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres-exporter:9187']

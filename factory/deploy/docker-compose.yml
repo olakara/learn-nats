@@ -1,0 +1,207 @@
+
+
+x-common: &common
+  networks:
+    - observability
+
+networks:
+  observability:
+    driver: bridge
+
+volumes:
+  prometheus-data:
+  tempo-data:
+  loki-data:
+  grafana-data:
+  nats-data:
+  redis-data:
+  postgres-data:
+
+services:
+
+  # ---------------------------------------------------------------------
+  # OTel Collector - single ingestion point for your Go services.
+  # Point your Go SDK (OTLP exporter) at otel-collector:4317 (gRPC) or
+  # :4318 (HTTP). Don't send directly to Tempo/Prometheus/Loki from app
+  # code - always go through the Collector so you can add sampling,
+  # batching, or a new backend later without touching app code.
+  # ---------------------------------------------------------------------
+  otel-collector:
+    <<: *common
+    image: otel/opentelemetry-collector-contrib:0.107.0
+    container_name: otel-collector
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+    ports:
+      - "4317:4317"   # OTLP gRPC
+      - "4318:4318"   # OTLP HTTP
+      - "8888:8888"   # Collector's own Prometheus metrics
+      - "8889:8889"   # Prometheus exporter (app metrics scraped from here)
+    depends_on:
+      - tempo
+      - loki
+      - prometheus
+
+  # ---------------------------------------------------------------------
+  # Tempo - trace storage. Chosen over Jaeger because it shares Grafana's
+  # query language conventions and correlates traces<->logs<->metrics
+  # natively via Grafana, which Jaeger's own UI can't do.
+  # ---------------------------------------------------------------------
+  tempo:
+    <<: *common
+    image: grafana/tempo:2.6.0
+    container_name: tempo
+    command: ["-config.file=/etc/tempo.yaml"]
+    volumes:
+      - ./tempo-config.yaml:/etc/tempo.yaml:ro
+      - tempo-data:/var/tempo
+    ports:
+      - "3200:3200"   # Tempo query API
+      - "9095:9095"   # Tempo gRPC (internal)
+
+  # ---------------------------------------------------------------------
+  # Prometheus - metrics storage. Scrapes the Collector's Prometheus
+  # exporter endpoint (8889) rather than each Go service individually,
+  # so service discovery stays centralized.
+  # ---------------------------------------------------------------------
+  prometheus:
+    <<: *common
+    image: prom/prometheus:v2.54.1
+    container_name: prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.retention.time=15d"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    ports:
+      - "9090:9090"
+
+  # ---------------------------------------------------------------------
+  # Loki - log storage. Your Go services should emit structured logs
+  # (JSON) and either ship them via the OTel Collector's log pipeline,
+  # or use a promtail/Docker driver. This compose wires the Collector
+  # path since you're already centralizing on OTLP.
+  # ---------------------------------------------------------------------
+  loki:
+    <<: *common
+    image: grafana/loki:3.1.1
+    container_name: loki
+    command: ["-config.file=/etc/loki/loki-config.yaml"]
+    volumes:
+      - ./loki-config.yaml:/etc/loki/loki-config.yaml:ro
+      - loki-data:/loki
+    ports:
+      - "3100:3100"
+
+  # ---------------------------------------------------------------------
+  # Grafana - single pane of glass across traces/metrics/logs.
+  # ---------------------------------------------------------------------
+  grafana:
+    <<: *common
+    image: grafana/grafana:11.2.0
+    container_name: grafana
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+      - tempo
+      - loki
+
+  # ---------------------------------------------------------------------
+  # NATS with JetStream enabled. -m 8222 exposes the monitoring endpoint,
+  # which Prometheus can scrape via the nats-exporter sidecar below -
+  # NATS does not expose Prometheus-format metrics natively.
+  # ---------------------------------------------------------------------
+  nats:
+    <<: *common
+    image: nats:2.10-alpine
+    container_name: nats
+    command: ["-js", "-m", "8222", "-sd", "/data"]
+    volumes:
+      - nats-data:/data
+    ports:
+      - "4222:4222"   # client connections
+      - "8222:8222"   # monitoring/HTTP
+
+  # NATS itself has no Prometheus exporter built in - this sidecar
+  # translates /varz, /jsz, /connz into Prometheus format.
+  nats-exporter:
+    <<: *common
+    image: natsio/prometheus-nats-exporter:0.15.0
+    container_name: nats-exporter
+    command: ["-varz", "-jsz=all", "-connz", "-routez", "-subz", "http://nats:8222"]
+    ports:
+      - "7777:7777"
+    depends_on:
+      - nats
+
+  # ---------------------------------------------------------------------
+  # Redis - instrument with redisotel in your Go client, not here.
+  # This container has no OTel awareness on its own.
+  # ---------------------------------------------------------------------
+  redis:
+    <<: *common
+    image: redis:7.4-alpine
+    container_name: redis
+    command: ["redis-server", "--save", "60", "1"]
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+
+  # redis_exporter for Prometheus, since redisotel only covers client-side
+  # command spans/metrics, not server-side stats (memory, keyspace, evictions).
+  redis-exporter:
+    <<: *common
+    image: oliver006/redis_exporter:v1.62.0
+    container_name: redis-exporter
+    command: ["--redis.addr=redis://redis:6379"]
+    ports:
+      - "9121:9121"
+    depends_on:
+      - redis
+
+  # ---------------------------------------------------------------------
+  # Postgres - instrument with otelsql wrapping database/sql in Go, not
+  # here. This container has no OTel awareness on its own.
+  # ---------------------------------------------------------------------
+  postgres:
+    <<: *common
+    image: postgres:16-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=app
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # postgres_exporter for server-side metrics (connections, locks,
+  # replication lag) that client-side otelsql spans won't show you.
+  postgres-exporter:
+    <<: *common
+    image: prometheuscommunity/postgres-exporter:v0.15.0
+    container_name: postgres-exporter
+    environment:
+      - DATA_SOURCE_NAME=postgresql://app:app@postgres:5432/app?sslmode=disable
+    ports:
+      - "9187:9187"
+    depends_on:
+      postgres:
+        condition: service_healthy
