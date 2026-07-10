@@ -2,13 +2,18 @@ package main
 
 import (
 	"accumulator/account"
+	"accumulator/tracing"
 	"accumulator/transactions"
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os/signal"
+	"syscall"
 
 	"github.com/google/uuid"
 	"github.com/nats-io/nats.go"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 type AccountService struct {
@@ -16,6 +21,14 @@ type AccountService struct {
 }
 
 func main() {
+	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
+	defer stop()
+
+	shutdown, err := tracing.Init(ctx, "accumulator")
+	if err != nil {
+		fmt.Println("Error initializing tracing:", err)
+		return
+	}
 
 	nc, err := nats.Connect(nats.DefaultURL)
 	if err != nil {
@@ -41,10 +54,15 @@ func main() {
 	}
 
 	js.Subscribe("transactions.new", func(msg *nats.Msg) {
+		msgCtx := tracing.ExtractContext(ctx, msg)
+		_, span := tracing.StartConsumerSpan(msgCtx, "transactions.new")
+		defer span.End()
+
 		var data transactions.Transaction
 		err := json.Unmarshal(msg.Data, &data)
 		if err != nil {
 			fmt.Println("Error unmarshalling data:", err)
+			span.RecordError(err)
 		}
 
 		acc, err := accountService.accountRepository.GetByPersonId(data.PersonId)
@@ -56,20 +74,30 @@ func main() {
 		err = accountService.accountRepository.Accumulate(acc.Id, data.Amount)
 		if err != nil {
 			fmt.Println("Error accumulating amount:", err)
+			span.RecordError(err)
 		}
 
 		fmt.Printf("account %+v\n", acc)
 	})
 
-	http.HandleFunc("/accounts/{id}", accountService.getAccountHandler)
-	http.HandleFunc("/accounts/", accountService.getAllAccountsHandler)
+	http.Handle("/accounts/{id}", otelhttp.NewHandler(http.HandlerFunc(accountService.getAccountHandler), "get-account"))
+	http.Handle("/accounts/", otelhttp.NewHandler(http.HandlerFunc(accountService.getAllAccountsHandler), "get-all-accounts"))
 
-	// Start the server on port 8080
-	println("Server running on :8080")
-	http.ListenAndServe(":8080", nil)
+	server := &http.Server{Addr: ":8080"}
+	go func() {
+		fmt.Println("Server running on :8080")
+		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			fmt.Println("Error running HTTP server:", err)
+		}
+	}()
 
-	select {}
+	<-ctx.Done()
+	fmt.Println("Shutting down...")
+	server.Shutdown(context.Background())
 
+	if err := shutdown(context.Background()); err != nil {
+		fmt.Println("Error shutting down tracer provider:", err)
+	}
 }
 
 func (s *AccountService) getAccountHandler(w http.ResponseWriter, r *http.Request) {
