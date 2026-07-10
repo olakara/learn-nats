@@ -1,23 +1,44 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"log"
 	"maker/config"
 	"maker/people"
+	"maker/tracing"
 	"maker/transaction"
 	"os"
 
 	"github.com/google/uuid"
 	"github.com/nats-io/nats.go"
+	"go.opentelemetry.io/otel"
 )
 
 func main() {
+	ctx := context.Background()
+
+	shutdown, err := tracing.Init(ctx, "maker")
+	if err != nil {
+		log.Fatal("Error initializing tracing:", err)
+	}
+	// Flush buffered spans before exit - maker is a one-shot program, so
+	// there's no long-lived process to flush on a timer later.
+	defer func() {
+		if err := shutdown(ctx); err != nil {
+			fmt.Println("Error shutting down tracer provider:", err)
+		}
+	}()
+
+	tracer := otel.Tracer("maker")
+	ctx, span := tracer.Start(ctx, "maker.run")
+	defer span.End()
+
 	config := config.LoadConfig()
 	fmt.Printf("Person Repo URL: %s\n", config.PersonURL)
 
-	repo := people.NewInMemoryPersonRepository(config.PersonURL)
+	repo := people.NewInMemoryPersonRepository(ctx, config.PersonURL)
 	fmt.Printf("Loaded %d people\n", len(repo.People()))
 
 	if len(repo.People()) == 0 {
@@ -51,7 +72,7 @@ func main() {
 	})
 
 	payload, _ := json.Marshal(t)
-	if err := nc.Publish("transactions.new", payload); err != nil {
+	if err := tracing.PublishWithTrace(ctx, js, "transactions.new", payload); err != nil {
 		fmt.Println("Error publishing transaction to NATS:", err)
 	} else {
 		fmt.Println("Transaction published to NATS")

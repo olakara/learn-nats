@@ -1,0 +1,13 @@
+services:
+  # Jaeger all-in-one: OTLP receiver + storage + query UI, all in one
+  # container. Fine for local dev; swap for a real collector/backend
+  # (e.g. Tempo, or Jaeger with a separate storage backend) in production.
+  jaeger:
+    image: jaegertracing/all-in-one:1.60
+    container_name: jaeger
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "16686:16686"  # UI
+      - "4317:4317"    # OTLP gRPC
+      - "4318:4318"    # OTLP HTTP

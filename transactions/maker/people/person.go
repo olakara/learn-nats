@@ -1,11 +1,14 @@
 package people
 
 import (
+	"context"
 	"crypto/rand"
 	"encoding/json"
 	"math/big"
 	"net/http"
 	"time"
+
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 type Person struct {
@@ -25,10 +28,18 @@ type InMemoryPersonRepository struct {
 	people []Person
 }
 
-func NewInMemoryPersonRepository(url string) *InMemoryPersonRepository {
-	client := &http.Client{Timeout: 5 * time.Second}
+func NewInMemoryPersonRepository(ctx context.Context, url string) *InMemoryPersonRepository {
+	client := &http.Client{
+		Timeout:   5 * time.Second,
+		Transport: otelhttp.NewTransport(http.DefaultTransport),
+	}
 
-	resp, err := client.Get(url)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	if err != nil {
+		return &InMemoryPersonRepository{people: []Person{}}
+	}
+
+	resp, err := client.Do(req)
 	if err != nil {
 		return &InMemoryPersonRepository{people: []Person{}}
 	}
