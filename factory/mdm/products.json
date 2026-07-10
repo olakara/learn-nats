@@ -5,14 +5,46 @@
             "name": "Razr Bluetooth Speaker",
             "sku": "RAZR-BT-SPK-01",
             "bom": [
-                { "id": "a1f3e5d7-2c4b-4a9e-8f1d-3b7c5e9d2f4a", "quantity": 2, "unit": "ea" },
-                { "id": "b2e4f6c8-3d5a-4b0f-9g2e-4c8d6f0e3g5b", "quantity": 1, "unit": "ea" },
-                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
-                { "id": "f6i8j0g2-7h9e-8f4j-3k6i-8g2h0j4i7k9f", "quantity": 1, "unit": "ea" },
-                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" },
-                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 3, "unit": "ea" }
+                {
+                    "id": "a1f3e5d7-2c4b-4a9e-8f1d-3b7c5e9d2f4a",
+                    "quantity": 2,
+                    "unit": "ea"
+                },
+                {
+                    "id": "af4afab6-fffe-405f-b899-1cd1663c4851",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "6206f811-18e8-40dd-b037-87cc467ae3a1",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "083bb800-5a71-4012-83a7-3b006ee69f5d",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "043e4342-fb8b-4bc1-aeac-5e24867cab84",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "5c041b9b-60e4-452e-8915-0621edfc89e2",
+                    "quantity": 3,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -20,14 +52,46 @@
             "name": "RGB Table Lamp",
             "sku": "RGB-LMP-TBL-01",
             "bom": [
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
-                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 1, "unit": "ea" },
-                { "id": "i9l1m3j5-0k2h-1i7m-6n9l-1j5k3m7l0n2i", "quantity": 1, "unit": "ea" },
-                { "id": "j0m2n4k6-1l3i-2j8n-7o0m-2k6l4n8m1o3j", "quantity": 1, "unit": "ea" },
-                { "id": "k1n3o5l7-2m4j-3k9o-8p1n-3l7m5o9n2p4k", "quantity": 1, "unit": "ea" },
-                { "id": "l2o4p6m8-3n5k-4l0p-9q2o-4m8n6p0o3q5l", "quantity": 1, "unit": "ea" },
-                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" }
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "5c041b9b-60e4-452e-8915-0621edfc89e2",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "06e864a5-faf5-4eb8-af7b-b66dbdfaf781",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "cd01707c-2a78-449d-9da3-bea8131f9bdb",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "58595363-9487-41b6-9203-0e14eaa7712b",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "32f09f64-0352-4dc0-af40-8dc04ece18ec",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "043e4342-fb8b-4bc1-aeac-5e24867cab84",
+                    "quantity": 1,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -35,12 +99,36 @@
             "name": "Wireless Charging Pad",
             "sku": "WL-CHRG-PAD-01",
             "bom": [
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
-                { "id": "m3p5q7n9-4o6l-5m1q-0r3p-5n9o7q1p4r6m", "quantity": 1, "unit": "ea" },
-                { "id": "n4q6r8o0-5p7m-6n2r-1s4q-6o0p8r2q5s7n", "quantity": 1, "unit": "ea" },
-                { "id": "o5r7s9p1-6q8n-7o3s-2t5r-7p1q9s3r6t8o", "quantity": 1, "unit": "ea" },
-                { "id": "p6s8t0q2-7r9o-8p4t-3u6s-8q2r0t4s7u9p", "quantity": 1, "unit": "ea" }
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "4b7b16a5-38cb-458d-b9e0-69c2a16e739d",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "27314014-5c85-4812-bc01-04173e9045b9",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "63665646-c300-4ced-af9f-f68295bf1d4c",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "7b00c315-421a-4461-9706-8e953a049512",
+                    "quantity": 1,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -48,12 +136,36 @@
             "name": "Portable Power Bank 10000mAh",
             "sku": "PWR-BANK-10K-01",
             "bom": [
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 2, "unit": "ea" },
-                { "id": "q7t9u1r3-8s0p-9q5u-4v7t-9r3s1u5t8v0q", "quantity": 1, "unit": "ea" },
-                { "id": "r8u0v2s4-9t1q-0r6v-5w8u-0s4t2v6u9w1r", "quantity": 1, "unit": "ea" },
-                { "id": "s9v1w3t5-0u2r-1s7w-6x9v-1t5u3w7v0x2s", "quantity": 1, "unit": "ea" },
-                { "id": "o5r7s9p1-6q8n-7o3s-2t5r-7p1q9s3r6t8o", "quantity": 4, "unit": "ea" }
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 2,
+                    "unit": "ea"
+                },
+                {
+                    "id": "7740dd11-0eb1-450e-93d5-d2b8b7e796ca",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "1f126fd8-deb5-4e40-b9f9-e0e224e17844",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "81f6288c-d6fb-462e-a9a4-6df58bf5dd90",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "63665646-c300-4ced-af9f-f68295bf1d4c",
+                    "quantity": 4,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -61,15 +173,51 @@
             "name": "Mini Bluetooth Projector",
             "sku": "MINI-PROJ-BT-01",
             "bom": [
-                { "id": "b2e4f6c8-3d5a-4b0f-9g2e-4c8d6f0e3g5b", "quantity": 1, "unit": "ea" },
-                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
-                { "id": "t0w2x4u6-1v3s-2t8x-7y0w-2u6v4x8w1y3t", "quantity": 1, "unit": "ea" },
-                { "id": "u1x3y5v7-2w4t-3u9y-8z1x-3v7w5y9x2z4u", "quantity": 1, "unit": "ea" },
-                { "id": "v2y4z6w8-3x5u-4v0z-9a2y-4w8x6z0y3a5v", "quantity": 1, "unit": "ea" },
-                { "id": "w3z5a7x9-4y6v-5w1a-0b3z-5x9y7a1z4b6w", "quantity": 1, "unit": "ea" },
-                { "id": "x4a6b8y0-5z7w-6x2b-1c4a-6y0z8b2a5c7x", "quantity": 1, "unit": "ea" }
+                {
+                    "id": "af4afab6-fffe-405f-b899-1cd1663c4851",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "6206f811-18e8-40dd-b037-87cc467ae3a1",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "9415d224-3fb5-4582-add6-fa5abc0f9627",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "9a2a5508-0422-486c-87bc-1d2e162769b7",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "918801ad-399d-47c3-ac18-c7345c7457ec",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "49db1117-dc62-44cd-a508-c7ff4fe4a3e8",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "101a9707-5dfb-429c-9a9f-863e4a40039a",
+                    "quantity": 1,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -77,14 +225,46 @@
             "name": "Smart Desk Fan",
             "sku": "SMRT-DSK-FAN-01",
             "bom": [
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "e5h7i9f1-6g8d-7e3i-2j5h-7f1g9i3h6j8e", "quantity": 1, "unit": "ea" },
-                { "id": "h8k0l2i4-9j1g-0h6l-5m8k-0i4j2l6k9m1h", "quantity": 3, "unit": "ea" },
-                { "id": "l2o4p6m8-3n5k-4l0p-9q2o-4m8n6p0o3q5l", "quantity": 1, "unit": "ea" },
-                { "id": "y5b7c9z1-6a8x-7y3c-2d5b-7z1a9c3b6d8y", "quantity": 1, "unit": "ea" },
-                { "id": "z6c8d0a2-7b9y-8z4d-3e6c-8a2b0d4c7e9z", "quantity": 1, "unit": "ea" },
-                { "id": "a7d9e1b3-8c0z-9a5e-4f7d-9b3c1e5d8f0a", "quantity": 1, "unit": "ea" },
-                { "id": "b8e0f2c4-9d1a-0b6f-5g8e-0c4d2f6e9g1b", "quantity": 1, "unit": "ea" }
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "728dad71-5a92-4956-b08d-d290acf58f77",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "5c041b9b-60e4-452e-8915-0621edfc89e2",
+                    "quantity": 3,
+                    "unit": "ea"
+                },
+                {
+                    "id": "32f09f64-0352-4dc0-af40-8dc04ece18ec",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "ca46f2e0-616d-43d7-b9c8-7dfe70615afd",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "7c0fe2b4-8599-4c76-aa50-ee7e0438151a",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "c423a38f-477b-4920-9a47-bd15930c02a8",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "4ed708d9-0aa3-43e1-8347-adf17624361e",
+                    "quantity": 1,
+                    "unit": "ea"
+                }
             ]
         },
         {
@@ -92,13 +272,41 @@
             "name": "Smart Video Doorbell",
             "sku": "SMRT-DOORBELL-01",
             "bom": [
-                { "id": "c3f5g7d9-4e6b-5c1g-0h3f-5d9e7g1f4h6c", "quantity": 1, "unit": "ea" },
-                { "id": "d4g6h8e0-5f7c-6d2h-1i4g-6e0f8h2g5i7d", "quantity": 1, "unit": "ea" },
-                { "id": "g7j9k1h3-8i0f-9g5k-4l7j-9h3i1k5j8l0g", "quantity": 1, "unit": "ea" },
-                { "id": "c9f1g3d5-0e2b-1c7g-6h9f-1d5e3g7f0h2c", "quantity": 1, "unit": "ea" },
-                { "id": "d0g2h4e6-1f3c-2d8h-7i0g-2e6f4h8g1i3d", "quantity": 1, "unit": "ea" },
-                { "id": "e1h3i5f7-2g4d-3e9i-8j1h-3f7g5i9h2j4e", "quantity": 1, "unit": "ea" },
-                { "id": "f2i4j6g8-3h5e-4f0j-9k2i-4g8h6j0i3k5f", "quantity": 1, "unit": "ea" }
+                {
+                    "id": "6206f811-18e8-40dd-b037-87cc467ae3a1",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "9aa9e927-67a9-42ea-8ff5-fee720492a17",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "043e4342-fb8b-4bc1-aeac-5e24867cab84",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "05967961-fab5-44fe-b811-dce65a630629",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "fb56d9b0-754d-4e9f-9c50-75beca20a731",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "180d3518-4930-4f32-95eb-acc28a8cef32",
+                    "quantity": 1,
+                    "unit": "ea"
+                },
+                {
+                    "id": "ce973782-d130-45eb-93cd-302be20f3847",
+                    "quantity": 1,
+                    "unit": "ea"
+                }
             ]
         }
     ]
