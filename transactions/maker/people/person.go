@@ -22,6 +22,7 @@ func NewPerson(id string, name string) Person {
 
 type PersonRepository interface {
 	People() []Person
+	GetSinglePerson() Person
 }
 
 type InMemoryPersonRepository struct {
